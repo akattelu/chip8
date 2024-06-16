@@ -100,7 +100,7 @@ func main() {
 
 			}
 			if chip8.soundTimer > 0 {
-				PlaySound(deviceID)
+				playSound(deviceID)
 				chip8.soundTimer -= 1
 			}
 			time.Sleep(time.Second / 60)
@@ -126,7 +126,7 @@ func main() {
 	}
 }
 
-func PlaySound(deviceID sdl.AudioDeviceID) {
+func playSound(deviceID sdl.AudioDeviceID) {
 	durationSeconds := 1.0 / 60.0
 	samples := int(float64(AUDIO_SAMPLE_RATE) * durationSeconds)
 	stream := make([]float32, samples)
