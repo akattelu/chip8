@@ -191,7 +191,6 @@ func (c *CPU) FinishWaitingForKey(sdlKey int) {
 func (c *CPU) PressKey(sdlKey int) {
 	loc, ok := KEY_STATE_MAP[sdlKey]
 	if ok {
-		fmt.Printf("Key Pressed: %x\n", loc)
 		c.KeyState[loc] = true
 	}
 }
@@ -199,7 +198,6 @@ func (c *CPU) PressKey(sdlKey int) {
 func (c *CPU) ReleaseKey(sdlKey int) {
 	loc, ok := KEY_STATE_MAP[sdlKey]
 	if ok {
-		fmt.Printf("Key released: %x\n", loc)
 		c.KeyState[loc] = false
 	}
 }
@@ -247,7 +245,6 @@ func (c *CPU) WriteGraphics(x, y byte, sprite []byte) bool {
 	startY := int(y) % 32
 
 	for _, spriteByte := range sprite {
-		fmt.Printf("Plotting 8 bits starting at (%d, %d)\n", startX, startY)
 		pos := ToGraphicsPos(startX, startY)
 		c.Graphics[GetWrappedPos(pos, 0)] ^= (spriteByte & 0x80) >> 7
 		c.Graphics[GetWrappedPos(pos, 1)] ^= (spriteByte & 0x40) >> 6
@@ -272,7 +269,6 @@ func (c *CPU) Run(instr uint16) {
 		c.sp -= 1
 	}
 	opcode := instr & 0xF000
-	fmt.Printf("Running opcode %x (instr %x)\n", opcode, instr)
 	switch opcode {
 	case 0x1000: // jump
 		c.ProgramCounter = instr & 0x0FFF
