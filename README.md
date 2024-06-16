@@ -19,7 +19,7 @@ go mod tidy
 
 This repository uses https://github.com/Timendus/chip8-test-suite/ as a submodule for test ROMs. Update with:
 ```sh
-  git submodule update --init --recursive
+git submodule update --init --recursive
 ```
 
 # Usage
@@ -31,3 +31,11 @@ go build
 ```
 
 # Screenshots
+
+<img width="1274" alt="image" src="https://github.com/akattelu/chip8/assets/12012201/249a54c1-99f5-43a8-8f07-eb39e5396706">
+<img width="1278" alt="image" src="https://github.com/akattelu/chip8/assets/12012201/fbf46b04-586f-4c18-89b5-d96c74d22dc1">
+<img width="1267" alt="image" src="https://github.com/akattelu/chip8/assets/12012201/3f820a1f-4ed1-4bb8-a1b7-84cb88e28821">
+<img width="1281" alt="image" src="https://github.com/akattelu/chip8/assets/12012201/55cf86c4-b172-4764-951c-b33069c01414">
+
+
+
