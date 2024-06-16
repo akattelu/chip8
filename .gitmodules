@@ -1,0 +1,3 @@
+[submodule "test-suite-roms"]
+	path = test-suite-roms
+	url = https://github.com/Timendus/chip8-test-suite
