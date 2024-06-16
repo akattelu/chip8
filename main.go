@@ -2,9 +2,9 @@ package main
 
 import (
 	"github.com/veandco/go-sdl2/sdl"
+	"math"
 	"os"
 	"time"
-	"math"
 )
 
 const (

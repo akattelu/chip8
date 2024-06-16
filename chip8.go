@@ -29,7 +29,6 @@ func NewCHIP8() CHIP8 {
 	}
 }
 
-
 func (c *CHIP8) FinishWaitingForKey(sdlKey int) {
 	if c.WaitingForKey != nil {
 		loc, ok := KEY_STATE_MAP[sdlKey]
@@ -54,8 +53,6 @@ func (c *CHIP8) ReleaseKey(sdlKey int) {
 	}
 }
 
-
-
 func (c *CHIP8) LoadROM(romBytes []byte) {
 	for i, b := range romBytes {
 		c.memory[0x200+i] = b
@@ -67,11 +64,6 @@ func (c *CHIP8) ReadInstruction() uint16 {
 	second := c.memory[c.programCounter+1]
 	return binary.BigEndian.Uint16([]byte{first, second})
 }
-
-
-
-
-
 
 func (c *CHIP8) Run(instr uint16) {
 	// just exact codes
@@ -291,8 +283,6 @@ func (c *CHIP8) Run(instr uint16) {
 func (c *CHIP8) advance() {
 	c.programCounter += 2
 }
-
-
 
 func (c *CHIP8) fontLocation(font uint16) uint16 {
 	return 5 * font
